@@ -1,31 +1,43 @@
 Assignment 1.1 — How a Website Works
 1. How a Website Works
 
-When a user types a URL (Uniform Resource Locator) into a web browser such as Google Chrome, the browser first finds the server's IP address using DNS (Domain Name System). The browser then sends an HTTP or HTTPS request to the web server. The client is the user's device or browser that requests information, while the server receives the request, processes it, and sends back the required resources. If the website needs stored information, the server communicates with a database, which stores and retrieves data. The server returns an HTTP response containing HTML, CSS, JavaScript, images, or other resources. The browser processes these resources and displays the website on the screen. HTTP stands for Hypertext Transfer Protocol, which is used to transfer data between a client and a server. HTTPS stands for Hypertext Transfer Protocol Secure, which uses encryption through TLS to protect data during transmission. This process is called the request-response cycle. A static website displays fixed content that generally remains the same for visitors unless its files are changed, whereas a dynamic website generates or updates content based on user input, database information, or server-side processing.
+When a user types a URL into a web browser, the browser first finds the website's server using DNS, which translates the domain name into an IP address. The browser then sends an HTTP or HTTPS request to the server. The server processes the request and may communicate with a database to retrieve the required information. After processing the request, the server sends an HTTP response containing HTML, CSS, JavaScript, images, or other resources. The browser interprets these resources and displays the website on the screen. The browser acts as the client, the server provides the requested resources, and the database stores and manages data when needed. This process is called the request-response cycle.
 
-2. Basic Components
-Browser: Software such as Google Chrome that requests web resources and displays websites.
+2. Browser, Client, Server, and Database
+Browser: Software such as Google Chrome that requests and displays websites.
 Client: The user's device or application that sends requests to a server.
-Server: A computer or software that processes requests and returns responses.
+Server: A computer or software that receives requests and returns responses.
 Database: A system that stores, organizes, and retrieves website data.
-HTTP: Hypertext Transfer Protocol; transfers data between clients and servers.
-HTTPS: Hypertext Transfer Protocol Secure; protects data in transit using encryption.
-3. Request-Response Cycle
-The user enters a URL into the browser.
+3. HTTP and HTTPS
+HTTP: Hypertext Transfer Protocol. It is used to transfer data between a browser and a web server.
+HTTPS: Hypertext Transfer Protocol Secure. It uses TLS encryption to protect data transmitted between the browser and server.
+4. Request-Response Cycle
+The user enters a URL in the browser.
 DNS resolves the domain name to an IP address.
-The browser establishes a connection with the server.
+The browser establishes a connection to the server.
 The browser sends an HTTP or HTTPS request.
-The server processes the request and may retrieve data from a database.
-The server sends an HTTP response with the requested content.
-The browser loads the resources and displays the webpage.  
-  4. Static Website vs. Dynamic Website  
+The server processes the request and may access a database.
+The server returns an HTTP response with a status code and requested resources.
+The browser processes the resources and displays the website.
+5. Static vs Dynamic Websites
 Static Website	Dynamic Website
-Displays prebuilt files.	Can generate content based on requests or user activity.
-Usually shows the same content to visitors.	Content may vary by user, input, or database data.
-Often simpler to build and host.	May require server-side logic or APIs and a database.
-Example: A basic HTML portfolio page.	Example: An online shopping website.
-5. Practical Task — Inspect Network 
+Usually serves pre-created files.	Can generate content based on requests or user data.
+Content generally stays the same until files are changed.	Content can change depending on user input or database information.
+Often simpler to host.	May require server-side processing and database access.
+Example: a basic HTML information page.	Example: an online shopping website showing personalized cart details.
+6. Practical Task — Inspect the Network Tab
 
-6. Conclusion
+Steps performed:
 
-A website works through communication between a browser (client) and a web server using HTTP or HTTPS. The server may retrieve information from a database before returning a response. The browser processes the returned resources and renders the webpage. Inspecting the Network tab in Chrome DevTools helps us understand the requests and responses involved in loading a website.
+Open Google Chrome.
+Visit a website, such as https://example.com.
+Right-click the page and select Inspect, or press F12.
+Open the Network tab.
+Reload the page to capture its network requests.
+Click a request to inspect its status code, headers, and response.
+
+Observation: The Network tab displays requests made by the browser to load a website. The status code indicates the result of each request. For example, 200 OK means a request succeeded. Record the actual status code and details observed during your inspection.
+
+Conclusion
+
+A website loads through communication between a browser and a server using HTTP or HTTPS. DNS helps locate the server, the request-response cycle transfers resources, and databases may provide the information needed for dynamic content. Chrome DevTools helps us inspect these requests and understand how a website loads.
